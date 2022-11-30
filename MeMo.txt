@@ -1,0 +1,4 @@
+﻿Tutorial
+https://learn.microsoft.com/en-us/dotnet/csharp/tutorials/console-webapiclient
+
+http://zuga.net/articles/cs-3-ways-to-make-an-http-get-request/
