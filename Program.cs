@@ -1,4 +1,6 @@
-﻿namespace CurrencyConverter
+﻿using CurrencyConverter.Http;
+
+namespace CurrencyConverter
 {
     internal class Program
     {

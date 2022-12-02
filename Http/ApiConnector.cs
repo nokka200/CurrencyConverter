@@ -2,7 +2,7 @@
 
 using System.Runtime.CompilerServices;
 
-namespace CurrencyConverter
+namespace CurrencyConverter.Http
 {
     public class ApiConnector
     {
@@ -14,7 +14,7 @@ namespace CurrencyConverter
 
         public ApiConnector(string uri)
         {
-            Uri= uri;
+            Uri = uri;
             clientObj = new HttpClient();
         }
 
