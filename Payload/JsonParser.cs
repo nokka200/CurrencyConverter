@@ -1,12 +1,13 @@
-﻿using System.Text.Json;
-using System.Text.Json.Nodes;
+﻿using CurrencyConverter.ConvertEngine;
+using System.Text.Json;
 
 namespace CurrencyConverter.Payload
 {
     public class JsonParser
     {
-        string currentPath = Directory.GetCurrentDirectory();
-        string fileName;
+        // fields
+        readonly string currentPath = Directory.GetCurrentDirectory();
+        readonly string fileName;
 
         public JsonParser(string fileName)
         {
@@ -14,11 +15,31 @@ namespace CurrencyConverter.Payload
             currentPath += "/" + this.fileName;
         }
 
+        /// <summary>
+        /// Reads the file's content and prints it to console.
+        /// </summary>
         public void ReadFile()
         {
-            File.ReadAllLines(currentPath);
-            
+            using StreamReader readerObj = new(currentPath);
+            Console.WriteLine(readerObj.ReadToEnd());
         }
+
+        /// <summary>
+        /// Deserializes a json file, to a Currencies class.
+        /// </summary>
+        /// <returns>currency object</returns>
+        public Currencies CreateCurrencyConverterFromFile()
+        {
+            string jsonString;
+            Currencies dollar;
+
+            jsonString = File.ReadAllText(currentPath);
+
+            dollar = JsonSerializer.Deserialize<Currencies>(jsonString)!;
+
+            return dollar;
+        }
+        
     }
 
 }

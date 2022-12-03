@@ -1,4 +1,4 @@
-﻿using CurrencyConverter.Http;
+﻿using CurrencyConverter.Testers;
 
 namespace CurrencyConverter
 {
@@ -6,8 +6,11 @@ namespace CurrencyConverter
     {
         static void Main(string[] args)
         {
-            ApiConnector apiObj = new("https://openexchangerates.org/api/latest.json?app_id=e4b4cecf9f2342299a29d8c2fb5786c7");
-            apiObj.TestConnection();
+            //MethodTester.TestConnection();
+
+            //MethodTester.TestReadJson();
+
+            MethodTester.TestJsonDeserialize();
         }
     }
 }

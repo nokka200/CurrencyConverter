@@ -2,3 +2,34 @@
 https://learn.microsoft.com/en-us/dotnet/csharp/tutorials/console-webapiclient
 
 http://zuga.net/articles/cs-3-ways-to-make-an-http-get-request/
+
+
+
+Json stuff
+
+How to serialize and deserialize json
+https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/how-to?pivots=dotnet-7-0
+
+
+Classes
+
+Currencies
+
+ApiConnector
+
+JsonParser
+
+
+Todo
+
+In Progress
+
+Done
+
+
+Status
+
+ApiConnector onnistuu hakemaan json formaatissa olevan tiedoston netistä
+
+JsonParses pystyy muuttamaan .json tiedostosta toimivan Currencies luokan jolla muutoksia voi tehdä
+
