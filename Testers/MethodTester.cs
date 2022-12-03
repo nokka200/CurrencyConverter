@@ -46,5 +46,17 @@ namespace CurrencyConverter.Testers
             Console.WriteLine($"Base: {currencyObj.Base}");
             Console.WriteLine($"Rate: {currencyObj.Rates["EUR"]}");
         }
+
+        static public void TestConvertToKRW()
+        {
+            Currencies currencyObj;
+            double result;
+
+            currencyObj = jsonReader.CreateCurrencyConverterFromFile();
+
+            result = currencyObj.ConvertTo("KRW", 100);
+
+            Console.WriteLine($"Result: {result}");
+        }
     }
 }

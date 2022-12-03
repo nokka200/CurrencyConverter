@@ -10,6 +10,22 @@ Json stuff
 How to serialize and deserialize json
 https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/how-to?pivots=dotnet-7-0
 
+Memo
+
+Currencies needed
+
+Singapore		= SGD
+Thailand		= THB
+Malaysia		= MYR
+Phillippines	= PHP
+Indonesia		= IDR
+Argentina		= ARS
+Egypt			= EGP
+Mexico			= MXN
+Brazil			= BRL
+South Korea		= KRW
+
+----
 
 Classes
 

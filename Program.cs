@@ -10,7 +10,9 @@ namespace CurrencyConverter
 
             //MethodTester.TestReadJson();
 
-            MethodTester.TestJsonDeserialize();
+            //MethodTester.TestJsonDeserialize();
+
+            MethodTester.TestConvertToKRW();
         }
     }
 }
