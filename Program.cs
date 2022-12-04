@@ -12,7 +12,11 @@ namespace CurrencyConverter
 
             //MethodTester.TestJsonDeserialize();
 
-            MethodTester.TestConvertToKRW();
+            //MethodTester.TestConvertUSDTo("EUR", 125);
+
+            //MethodTester.TestConvertToUSD("EUR", 118.76);
+
+            MethodTester.TestMarvelConvert();
         }
     }
 }

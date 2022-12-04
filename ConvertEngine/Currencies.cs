@@ -14,22 +14,41 @@ namespace CurrencyConverter.ConvertEngine
         public Dictionary<string, double>? Rates { get; set; }
 
         /// <summary>
-        /// Tries to convert from USD to x for y amount
+        /// Tries to convert from USD to x.
         /// </summary>
         /// <param name="currencyCode">ISO 4217 standard currency code</param>
         /// <param name="amount">amount to convert</param>
-        /// <returns>value in dollars</returns>
-        public double ConvertTo(string currencyCode, double amount)
+        /// <returns>value in converted currency rounded</returns>
+        public double ConvertUSDTo(string currencyCode, double amount)
         {
-            double value;
             double total;
 
             if(Rates != null)
             {
-                Rates.TryGetValue(currencyCode, out value);
+                Rates.TryGetValue(currencyCode, out double value);
                 total = amount * value;
 
-                return total;
+                return Math.Round(total, 2);
+            }
+            return -1;
+        }
+
+        /// <summary>
+        /// Tries to convert to USD from x.
+        /// </summary>
+        /// <param name="currencyCode">ISO 4217 standard currency code</param>
+        /// <param name="amount">amount to conver</param>
+        /// <returns>value in converted currency rounded</returns>
+        public double ConvertToUSD(string currencyCode, double amount)
+        {
+            double total;
+
+            if(Rates != null)
+            {
+                Rates.TryGetValue(currencyCode, out double value);
+                total = amount / value;
+
+                return Math.Round(total, 2);
             }
             return -1;
         }
