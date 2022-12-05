@@ -37,7 +37,7 @@ namespace CurrencyConverter.ConvertEngine
         /// Tries to convert to USD from x.
         /// </summary>
         /// <param name="currencyCode">ISO 4217 standard currency code</param>
-        /// <param name="amount">amount to conver</param>
+        /// <param name="amount">amount to convert</param>
         /// <returns>value in converted currency rounded</returns>
         public double ConvertToUSD(string currencyCode, double amount)
         {
@@ -53,5 +53,22 @@ namespace CurrencyConverter.ConvertEngine
             return -1;
         }
 
+        /// <summary>
+        /// Converts X currency to EUR
+        /// </summary>
+        /// <param name="amount">amount to convert</param>
+        /// <returns>value in euros, rounded</returns>
+        public double ConvertUSDtoEUR(string currencyCode, double amount)
+        {
+            double total;
+
+            // first convert's x currency to dollar
+            total = ConvertToUSD(currencyCode, amount);
+
+            // second convert dollars to eur
+            total = ConvertUSDTo("EUR", total);
+
+            return total;
+        }
     }
 }

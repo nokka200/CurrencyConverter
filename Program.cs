@@ -16,7 +16,13 @@ namespace CurrencyConverter
 
             //MethodTester.TestConvertToUSD("EUR", 118.76);
 
-            MethodTester.TestMarvelConvert();
+            //MethodTester.TestMarvelConvertToUSD();
+
+            //Console.WriteLine("-----");
+
+            MethodTester.TestMarvelConvertToEUR();
+
+            //MethodTester.TestConnectionAndConvert();
         }
     }
 }

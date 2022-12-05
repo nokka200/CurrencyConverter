@@ -28,7 +28,7 @@ namespace CurrencyConverter.Payload
         /// Deserializes a json file, to a Currencies class.
         /// </summary>
         /// <returns>currency object</returns>
-        public Currencies CreateCurrencyConverterFromFile()
+        public Currencies DeserializeCurrencyFromFile()
         {
             string jsonString;
             Currencies dollar;
@@ -38,6 +38,20 @@ namespace CurrencyConverter.Payload
             dollar = JsonSerializer.Deserialize<Currencies>(jsonString)!;
 
             return dollar;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="toJson"></param>
+        /// <returns></returns>
+        public Currencies DeserializeCurrencyFromStr(string toJson)
+        {
+            Currencies dollar;
+
+            dollar = JsonSerializer.Deserialize<Currencies>(toJson)!;
+
+            return dollar!;
         }
         
     }

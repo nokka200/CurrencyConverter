@@ -20,6 +20,8 @@ namespace CurrencyConverter.Testers
         // Currencies stuff
         static Currencies? currencyObj;
 
+        /*CONNECTION TESTS*/
+
         /// <summary>
         /// Test the connection to the api
         /// </summary>
@@ -42,13 +44,60 @@ namespace CurrencyConverter.Testers
         /// </summary>
         static public void TestJsonDeserialize()
         {
-            currencyObj = jsonReader.CreateCurrencyConverterFromFile();
+            currencyObj = jsonReader.DeserializeCurrencyFromFile();
 
             Console.WriteLine($"Base: {currencyObj.Base}");
 
             if(currencyObj.Rates != null)
                 Console.WriteLine($"Rate: {currencyObj.Rates["EUR"]}");
         }
+
+        /// <summary>
+        /// Test connection and creating a currency object from it
+        /// </summary>
+        static public void TestConnectionAndConvert()
+        {
+            string response;
+            double result;
+
+            ApiConnector apiObj = new(uri, key);
+            response = apiObj.GetResponse();
+
+            currencyObj = jsonReader.DeserializeCurrencyFromStr(response);
+
+            result = currencyObj.ConvertUSDtoEUR("SGD", 139.99);
+            Console.WriteLine($"Result /SGD -> EUR: \t{result}");
+
+            result = currencyObj.ConvertUSDtoEUR("THB", 3600);
+            Console.WriteLine($"Result /THB -> EUR: \t{result}");
+
+            result = currencyObj.ConvertUSDtoEUR("MYR", 479.9);
+            Console.WriteLine($"Result /MYR -> EUR: \t{result}");
+
+            result = currencyObj.ConvertUSDtoEUR("PHP", 4990);
+            Console.WriteLine($"Result /PHP -> EUR: \t{result}");
+
+            result = currencyObj.ConvertUSDtoEUR("IDR", 1500000);
+            Console.WriteLine($"Result /IDR -> EUR: \t{result}");
+
+            result = currencyObj.ConvertUSDtoEUR("ARS", 15500);
+            Console.WriteLine($"Result /ARS -> EUR: \t{result}");
+
+            result = currencyObj.ConvertUSDtoEUR("EGP", 2400);
+            Console.WriteLine($"Result /EGP -> EUR: \t{result}");
+
+            result = currencyObj.ConvertUSDtoEUR("MXN", 1990);
+            Console.WriteLine($"Result /MXN -> EUR: \t{result}");
+
+            result = currencyObj.ConvertUSDtoEUR("BRL", 529.9);
+            Console.WriteLine($"Result /BRL -> EUR: \t{result}");
+
+            result = currencyObj.ConvertUSDtoEUR("KRW", 149000);
+            Console.WriteLine($"Result /KRW -> EUR: \t{result}");
+
+        }
+
+        /*CONVERT TESTS*/
 
         /// <summary>
         /// Test converting usd to x value
@@ -58,7 +107,7 @@ namespace CurrencyConverter.Testers
         {
             double result;
 
-            currencyObj = jsonReader.CreateCurrencyConverterFromFile();
+            currencyObj = jsonReader.DeserializeCurrencyFromFile();
 
             result = currencyObj.ConvertUSDTo(valueToConvert, amount);
 
@@ -73,48 +122,91 @@ namespace CurrencyConverter.Testers
         {
             double result;
 
-            currencyObj = jsonReader.CreateCurrencyConverterFromFile();
+            currencyObj = jsonReader.DeserializeCurrencyFromFile();
 
             result = currencyObj.ConvertToUSD(valueToConvert, amount);
 
             Console.WriteLine($"Result: {result}");
         }
 
-        static public void TestMarvelConvert()
+        /// <summary>
+        /// Test currencies used in Marvel snap To USD
+        /// </summary>
+        static public void TestMarvelConvertToUSD()
         {
             double result;
 
-            currencyObj = jsonReader.CreateCurrencyConverterFromFile();
+            currencyObj = jsonReader.DeserializeCurrencyFromFile();
 
             result = currencyObj.ConvertToUSD("SGD", 139.99);
-            Console.WriteLine($"Result /SGD: \t{result}");
+            Console.WriteLine($"Result /SGD -> USD: \t{result}");
 
             result = currencyObj.ConvertToUSD("THB", 3600);
-            Console.WriteLine($"Result /THB: \t{result}");
+            Console.WriteLine($"Result /THB -> USD: \t{result}");
 
             result = currencyObj.ConvertToUSD("MYR", 479.9);
-            Console.WriteLine($"Result /MYR: \t{result}");
+            Console.WriteLine($"Result /MYR -> USD: \t{result}");
 
             result = currencyObj.ConvertToUSD("PHP", 4990);
-            Console.WriteLine($"Result /PHP: \t{result}");
+            Console.WriteLine($"Result /PHP -> USD: \t{result}");
 
             result = currencyObj.ConvertToUSD("IDR", 1500000);
-            Console.WriteLine($"Result /IDR: \t{result}");
+            Console.WriteLine($"Result /IDR -> USD: \t{result}");
 
             result = currencyObj.ConvertToUSD("ARS", 15500);
-            Console.WriteLine($"Result /ARS: \t{result}");
+            Console.WriteLine($"Result /ARS -> USD: \t{result}");
 
             result = currencyObj.ConvertToUSD("EGP", 2400);
-            Console.WriteLine($"Result /EGP: \t{result}");
+            Console.WriteLine($"Result /EGP -> USD: \t{result}");
 
             result = currencyObj.ConvertToUSD("MXN", 1990);
-            Console.WriteLine($"Result /MXN: \t{result}");
+            Console.WriteLine($"Result /MXN -> USD: \t{result}");
 
             result = currencyObj.ConvertToUSD("BRL", 529.9);
-            Console.WriteLine($"Result /BRL: \t{result}");
+            Console.WriteLine($"Result /BRL -> USD: \t{result}");
 
             result = currencyObj.ConvertToUSD("KRW", 149000);
-            Console.WriteLine($"Result /KRW: \t{result}");
+            Console.WriteLine($"Result /KRW -> USD: \t{result}");
+        }
+
+        /// <summary>
+        /// Test currencies in marvel snap to euros
+        /// </summary>
+        static public void TestMarvelConvertToEUR()
+        {
+            double result;
+
+            currencyObj = jsonReader.DeserializeCurrencyFromFile();
+
+            result = currencyObj.ConvertUSDtoEUR("SGD", 139.99);
+            Console.WriteLine($"Result /SGD -> EUR: \t{result}");
+
+            result = currencyObj.ConvertUSDtoEUR("THB", 3600);
+            Console.WriteLine($"Result /THB -> EUR: \t{result}");
+
+            result = currencyObj.ConvertUSDtoEUR("MYR", 479.9);
+            Console.WriteLine($"Result /MYR -> EUR: \t{result}");
+
+            result = currencyObj.ConvertUSDtoEUR("PHP", 4990);
+            Console.WriteLine($"Result /PHP -> EUR: \t{result}");
+
+            result = currencyObj.ConvertUSDtoEUR("IDR", 1500000);
+            Console.WriteLine($"Result /IDR -> EUR: \t{result}");
+
+            result = currencyObj.ConvertUSDtoEUR("ARS", 15500);
+            Console.WriteLine($"Result /ARS -> EUR: \t{result}");
+
+            result = currencyObj.ConvertUSDtoEUR("EGP", 2400);
+            Console.WriteLine($"Result /EGP -> EUR: \t{result}");
+
+            result = currencyObj.ConvertUSDtoEUR("MXN", 1990);
+            Console.WriteLine($"Result /MXN -> EUR: \t{result}");
+
+            result = currencyObj.ConvertUSDtoEUR("BRL", 529.9);
+            Console.WriteLine($"Result /BRL -> EUR: \t{result}");
+
+            result = currencyObj.ConvertUSDtoEUR("KRW", 149000);
+            Console.WriteLine($"Result /KRW -> EUR: \t{result}");
         }
     }
 }
