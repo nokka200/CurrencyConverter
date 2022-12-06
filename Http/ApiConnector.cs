@@ -46,5 +46,19 @@ namespace CurrencyConverter.Http
             return responseBody;
         }
 
+        /// <summary>
+        /// Writes the response to a json file
+        /// </summary>
+        public void WriteToFile()
+        {
+            string result;
+            DateTime dateObj = DateTime.Now;
+            string fileName = new("Currency.json"); // BUG: time in wrong format
+
+            result = GetResponse();
+
+            File.WriteAllText(fileName, result);
+        }
+
     }
 }

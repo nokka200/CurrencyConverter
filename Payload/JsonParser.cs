@@ -41,7 +41,7 @@ namespace CurrencyConverter.Payload
         }
 
         /// <summary>
-        /// 
+        /// Serializes a json to a curency class
         /// </summary>
         /// <param name="toJson"></param>
         /// <returns></returns>

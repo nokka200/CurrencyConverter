@@ -20,9 +20,11 @@ namespace CurrencyConverter
 
             //Console.WriteLine("-----");
 
-            MethodTester.TestMarvelConvertToEUR();
+            //MethodTester.TestMarvelConvertToEUR();
 
             //MethodTester.TestConnectionAndConvert();
+
+            MethodTester.TestConnectionAndWriteToFile();
         }
     }
 }

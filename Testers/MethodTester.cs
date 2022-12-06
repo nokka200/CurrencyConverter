@@ -97,6 +97,12 @@ namespace CurrencyConverter.Testers
 
         }
 
+        static public void TestConnectionAndWriteToFile()
+        {
+            ApiConnector apiObj = new(uri, key);
+            apiObj.WriteToFile();
+        }
+
         /*CONVERT TESTS*/
 
         /// <summary>
