@@ -8,18 +8,16 @@ namespace CurrencyConverter.Http
     public class ApiConnector
     {
         // properties
-        public string Uri { get; private set; }
+        public Uri Uriobj { get; private set; }
 
         // fields
         readonly HttpClient clientObj;
         readonly string key;
-        readonly string completeUri;
 
         public ApiConnector(string uri, string key)
         {
-            Uri = uri;
+            Uriobj = new(uri);
             this.key = key;
-            completeUri = Uri + this.key;
             clientObj = new HttpClient();
         }
 
@@ -29,7 +27,7 @@ namespace CurrencyConverter.Http
         public void TestConnection()
         {
             string responseBody;
-            responseBody = clientObj.GetStringAsync(completeUri).Result;
+            responseBody = clientObj.GetStringAsync(Uriobj + this.key).Result;
             Console.WriteLine("Body");
             Console.WriteLine(responseBody);
         }
@@ -41,7 +39,7 @@ namespace CurrencyConverter.Http
         public string GetResponse()
         {
             string responseBody;
-            responseBody = clientObj.GetStringAsync(completeUri).Result;
+            responseBody = clientObj.GetStringAsync(Uriobj + this.key).Result;
 
             return responseBody;
         }
@@ -53,6 +51,7 @@ namespace CurrencyConverter.Http
         {
             string result;
             DateTime dateObj = DateTime.Now;
+            
             string fileName = new("Currency.json"); // BUG: time in wrong format
 
             result = GetResponse();

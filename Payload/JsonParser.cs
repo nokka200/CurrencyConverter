@@ -9,6 +9,10 @@ namespace CurrencyConverter.Payload
         readonly string currentPath = Directory.GetCurrentDirectory();
         readonly string fileName;
 
+        /// <summary>
+        /// Reads the file from the source of this exe
+        /// </summary>
+        /// <param name="fileName"></param>
         public JsonParser(string fileName)
         {
             this.fileName= fileName;

@@ -9,16 +9,49 @@ namespace CurrencyConverter.Testers
     {
         // generic stuff
         const string JSON_FILE = "TestJson.json";
+        const string KEY = "CURRENCY_KEY";
 
         // Http test fields
-        readonly static string key = "e4b4cecf9f2342299a29d8c2fb5786c7";
+        readonly static string key = Environment.GetEnvironmentVariable(KEY)!;
         readonly static string uri = "https://openexchangerates.org/api/latest.json?app_id=";
+        readonly static Uri uriObj = new("https://openexchangerates.org/api/latest.json?app_id=");
 
         // Payload test fields
-        static JsonParser jsonReader = new(JSON_FILE);
+        readonly static JsonParser jsonReader = new(JSON_FILE);
 
         // Currencies stuff
         static Currencies? currencyObj;
+
+        /* RANDOM tests*/
+
+        static public void TestDateTimeFormat()
+        {
+            DateTime dateObj = DateTime.Now;
+            Console.WriteLine(dateObj.ToLocalTime());
+        }
+
+        /*ENV variable tests*/
+
+        /// <summary>
+        /// Gets the env variable and prints it
+        /// </summary>
+        static public void TestEnvVariableGet()
+        {
+            string? value;
+
+            value = Environment.GetEnvironmentVariable("CURRENCY_KEY");
+            Console.WriteLine($"Value: {value}");
+        }
+
+        /*URI object test*/
+
+        /// <summary>
+        /// Print the uri to console
+        /// </summary>
+        static public void TestUriObject()
+        {
+            Console.WriteLine(uriObj + key);
+        }
 
         /*CONNECTION TESTS*/
 

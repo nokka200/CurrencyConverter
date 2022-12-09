@@ -24,7 +24,13 @@ namespace CurrencyConverter
 
             //MethodTester.TestConnectionAndConvert();
 
-            MethodTester.TestConnectionAndWriteToFile();
+            //MethodTester.TestConnectionAndWriteToFile();
+
+            //MethodTester.TestEnvVariableGet();
+
+            //MethodTester.TestUriObject();
+
+            MethodTester.TestDateTimeFormat();
         }
     }
 }
