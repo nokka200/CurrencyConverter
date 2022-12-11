@@ -98,34 +98,34 @@ namespace CurrencyConverter.Testers
 
             currencyObj = jsonReader.DeserializeCurrencyFromStr(response);
 
-            result = currencyObj.ConvertUSDtoEUR("SGD", 139.99);
+            result = currencyObj.ConvertXtoEUR("SGD", 139.99);
             Console.WriteLine($"Result /SGD -> EUR: \t{result}");
 
-            result = currencyObj.ConvertUSDtoEUR("THB", 3600);
+            result = currencyObj.ConvertXtoEUR("THB", 3600);
             Console.WriteLine($"Result /THB -> EUR: \t{result}");
 
-            result = currencyObj.ConvertUSDtoEUR("MYR", 479.9);
+            result = currencyObj.ConvertXtoEUR("MYR", 479.9);
             Console.WriteLine($"Result /MYR -> EUR: \t{result}");
 
-            result = currencyObj.ConvertUSDtoEUR("PHP", 4990);
+            result = currencyObj.ConvertXtoEUR("PHP", 4990);
             Console.WriteLine($"Result /PHP -> EUR: \t{result}");
 
-            result = currencyObj.ConvertUSDtoEUR("IDR", 1500000);
+            result = currencyObj.ConvertXtoEUR("IDR", 1500000);
             Console.WriteLine($"Result /IDR -> EUR: \t{result}");
 
-            result = currencyObj.ConvertUSDtoEUR("ARS", 15500);
+            result = currencyObj.ConvertXtoEUR("ARS", 15500);
             Console.WriteLine($"Result /ARS -> EUR: \t{result}");
 
-            result = currencyObj.ConvertUSDtoEUR("EGP", 2400);
+            result = currencyObj.ConvertXtoEUR("EGP", 2400);
             Console.WriteLine($"Result /EGP -> EUR: \t{result}");
 
-            result = currencyObj.ConvertUSDtoEUR("MXN", 1990);
+            result = currencyObj.ConvertXtoEUR("MXN", 1990);
             Console.WriteLine($"Result /MXN -> EUR: \t{result}");
 
-            result = currencyObj.ConvertUSDtoEUR("BRL", 529.9);
+            result = currencyObj.ConvertXtoEUR("BRL", 529.9);
             Console.WriteLine($"Result /BRL -> EUR: \t{result}");
 
-            result = currencyObj.ConvertUSDtoEUR("KRW", 149000);
+            result = currencyObj.ConvertXtoEUR("KRW", 149000);
             Console.WriteLine($"Result /KRW -> EUR: \t{result}");
 
         }
@@ -217,34 +217,34 @@ namespace CurrencyConverter.Testers
 
             currencyObj = jsonReader.DeserializeCurrencyFromFile();
 
-            result = currencyObj.ConvertUSDtoEUR("SGD", 139.99);
+            result = currencyObj.ConvertXtoEUR("SGD", 139.99);
             Console.WriteLine($"Result /SGD -> EUR: \t{result}");
 
-            result = currencyObj.ConvertUSDtoEUR("THB", 3600);
+            result = currencyObj.ConvertXtoEUR("THB", 3600);
             Console.WriteLine($"Result /THB -> EUR: \t{result}");
 
-            result = currencyObj.ConvertUSDtoEUR("MYR", 479.9);
+            result = currencyObj.ConvertXtoEUR("MYR", 479.9);
             Console.WriteLine($"Result /MYR -> EUR: \t{result}");
 
-            result = currencyObj.ConvertUSDtoEUR("PHP", 4990);
+            result = currencyObj.ConvertXtoEUR("PHP", 4990);
             Console.WriteLine($"Result /PHP -> EUR: \t{result}");
 
-            result = currencyObj.ConvertUSDtoEUR("IDR", 1500000);
+            result = currencyObj.ConvertXtoEUR("IDR", 1500000);
             Console.WriteLine($"Result /IDR -> EUR: \t{result}");
 
-            result = currencyObj.ConvertUSDtoEUR("ARS", 15500);
+            result = currencyObj.ConvertXtoEUR("ARS", 15500);
             Console.WriteLine($"Result /ARS -> EUR: \t{result}");
 
-            result = currencyObj.ConvertUSDtoEUR("EGP", 2400);
+            result = currencyObj.ConvertXtoEUR("EGP", 2400);
             Console.WriteLine($"Result /EGP -> EUR: \t{result}");
 
-            result = currencyObj.ConvertUSDtoEUR("MXN", 1990);
+            result = currencyObj.ConvertXtoEUR("MXN", 1990);
             Console.WriteLine($"Result /MXN -> EUR: \t{result}");
 
-            result = currencyObj.ConvertUSDtoEUR("BRL", 529.9);
+            result = currencyObj.ConvertXtoEUR("BRL", 529.9);
             Console.WriteLine($"Result /BRL -> EUR: \t{result}");
 
-            result = currencyObj.ConvertUSDtoEUR("KRW", 149000);
+            result = currencyObj.ConvertXtoEUR("KRW", 149000);
             Console.WriteLine($"Result /KRW -> EUR: \t{result}");
         }
     }

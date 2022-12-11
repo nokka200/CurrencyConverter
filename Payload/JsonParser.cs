@@ -55,7 +55,7 @@ namespace CurrencyConverter.Payload
 
             dollar = JsonSerializer.Deserialize<Currencies>(toJson)!;
 
-            return dollar!;
+            return dollar;
         }
         
     }

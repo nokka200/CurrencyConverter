@@ -23,14 +23,16 @@ namespace CurrencyConverter.ConvertEngine
         {
             double total;
 
-            if(Rates != null)
+            if(Rates == null)
             {
-                Rates.TryGetValue(currencyCode, out double value);
-                total = amount * value;
-
-                return Math.Round(total, 2);
+                return -1;
             }
-            return -1;
+            
+            Rates.TryGetValue(currencyCode, out double value);
+            total = amount * value;
+
+            return Math.Round(total, 2);
+            
         }
 
         /// <summary>
@@ -54,11 +56,11 @@ namespace CurrencyConverter.ConvertEngine
         }
 
         /// <summary>
-        /// Converts X currency to EUR
+        /// Converts X currency to EUR. First it will convert it to USD and then USD to EUR
         /// </summary>
         /// <param name="amount">amount to convert</param>
         /// <returns>value in euros, rounded</returns>
-        public double ConvertUSDtoEUR(string currencyCode, double amount)
+        public double ConvertXtoEUR(string currencyCode, double amount)
         {
             double total;
 
