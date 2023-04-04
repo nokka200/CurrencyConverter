@@ -61,7 +61,8 @@ namespace CurrencyConverter.Testers
         static public void TestConnection()
         {
             ApiConnector apiObj = new(uri, key);
-            apiObj.TestConnection();
+            var re = apiObj.TestConnection();
+            Console.WriteLine(re);
         }
 
         /// <summary>
@@ -213,9 +214,17 @@ namespace CurrencyConverter.Testers
         /// </summary>
         static public void TestMarvelConvertToEUR()
         {
+            //double result;
+
+            //currencyObj = jsonReader.DeserializeCurrencyFromFile();
+
+            string response;
             double result;
 
-            currencyObj = jsonReader.DeserializeCurrencyFromFile();
+            ApiConnector apiObj = new(uri, key);
+            response = apiObj.GetResponse();
+
+            currencyObj = jsonReader.DeserializeCurrencyFromStr(response);
 
             result = currencyObj.ConvertXtoEUR("SGD", 139.99);
             Console.WriteLine($"Result /SGD -> EUR: \t{result}");

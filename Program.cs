@@ -30,7 +30,9 @@ namespace CurrencyConverter
 
             //MethodTester.TestUriObject();
 
-            MethodTester.TestDateTimeFormat();
+            //MethodTester.TestDateTimeFormat();
+
+            MethodTester.TestMarvelConvertToEUR();
         }
     }
 }

@@ -24,12 +24,11 @@ namespace CurrencyConverter.Http
         /// <summary>
         /// Check if the connection works to the api, prints the result
         /// </summary>
-        public void TestConnection()
+        public string TestConnection()
         {
             string responseBody;
             responseBody = clientObj.GetStringAsync(Uriobj + this.key).Result;
-            Console.WriteLine("Body");
-            Console.WriteLine(responseBody);
+            return responseBody;
         }
 
         /// <summary>
