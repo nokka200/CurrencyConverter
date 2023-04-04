@@ -20,7 +20,7 @@ namespace CurrencyConverter
 
             //Console.WriteLine("-----");
 
-            //MethodTester.TestMarvelConvertToEUR();
+            MethodTester.TestMarvelConvertToEUR();
 
             //MethodTester.TestConnectionAndConvert();
 
@@ -31,8 +31,6 @@ namespace CurrencyConverter
             //MethodTester.TestUriObject();
 
             //MethodTester.TestDateTimeFormat();
-
-            MethodTester.TestMarvelConvertToEUR();
         }
     }
 }
