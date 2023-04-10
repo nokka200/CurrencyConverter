@@ -95,8 +95,9 @@ namespace CurrencyConverter.Testers
             double result;
 
             ApiConnector apiObj = new(uri, key);
-            response = apiObj.GetResponse();
+            
 
+            response = apiObj.GetResponse();
             currencyObj = jsonReader.DeserializeCurrencyFromStr(response);
 
             result = currencyObj.ConvertXtoEUR("SGD", 139.99);

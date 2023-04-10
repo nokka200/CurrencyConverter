@@ -1,10 +1,18 @@
 ﻿using CurrencyConverter.Testers;
+using CurrencyConverter.Ui;
 
 namespace CurrencyConverter
 {
     internal class Program
     {
         static void Main(string[] args)
+        {
+            ConsoleUi consoleObj = new(args);
+            consoleObj.GetExchangeAsync().Wait();
+            
+        }
+
+        static void TestMethod()
         {
             //MethodTester.TestConnection();
 

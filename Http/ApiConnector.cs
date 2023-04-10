@@ -29,6 +29,7 @@ namespace CurrencyConverter.Http
             string responseBody;
             responseBody = clientObj.GetStringAsync(Uriobj + this.key).Result;
             return responseBody;
+
         }
 
         /// <summary>
@@ -39,6 +40,13 @@ namespace CurrencyConverter.Http
         {
             string responseBody;
             responseBody = clientObj.GetStringAsync(Uriobj + this.key).Result;
+
+            return responseBody;
+        }
+
+        public async Task<string> GetResponseAsync()
+        {
+            var responseBody = await clientObj.GetStringAsync(Uriobj + this.key);
 
             return responseBody;
         }
