@@ -49,9 +49,8 @@ namespace CurrencyConverter.Http
         public void WriteToFile()
         {
             string result;
-            DateTime dateObj = DateTime.Now;
             
-            string fileName = new("Currency.json"); // BUG: time in wrong format
+            string fileName = new("Currency.json");
 
             result = GetResponse();
 

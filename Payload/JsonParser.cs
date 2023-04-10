@@ -18,6 +18,11 @@ namespace CurrencyConverter.Payload
             this.fileName= fileName;
             currentPath += "/" + this.fileName;
         }
+        public JsonParser()
+        {
+            fileName = string.Empty;
+            currentPath = string.Empty;
+        }
 
         /// <summary>
         /// Reads the file's content and prints it to console.

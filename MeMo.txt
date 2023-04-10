@@ -8,7 +8,10 @@ How does it work
 1) ottaa yhteyden API end pointtiin ja pyytää ajantaisaiset vaihtotiedot str muodossa
 2) käännetään str teksti json muotoon
 3) tehdään luokka json pohjalta
-
+TAI
+1) ApiConnector luokan GetResponse metodi ottaa yhteyden API ja palauttaa ajantasaiset kurssit.
+2) JsonParser luokan DeserializeCurrencyFromStr muuttaa API palautetun str Currencies luokan ilmentymäksi.
+3) Käyttöliittymä voi Pyytää Currencies luokan metodeilta 
 
 Json stuff
 
