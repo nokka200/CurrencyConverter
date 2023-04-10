@@ -6,6 +6,9 @@ using System.Formats.Asn1;
 
 namespace CurrencyConverter.Ui
 {
+    /// <summary>
+    /// This class represents the console ui methods, has sync and async methods
+    /// </summary>
     public class ConsoleUi
     {
         // const
@@ -23,6 +26,9 @@ namespace CurrencyConverter.Ui
             apiObj = new(uri, key);
         }
 
+        /// <summary>
+        /// Calls different functions based on the users input
+        /// </summary>
         public void GetExchange()
         {
             string re = apiObj.TestConnection();
@@ -39,12 +45,16 @@ namespace CurrencyConverter.Ui
                     break;
 
                 default:
-                    Console.WriteLine("Wrong selection");
+                    Console.WriteLine("Wrong choice:" + startCommand[0]);
                     break;
             }
 
         }
 
+        /// <summary>
+        /// Async calls different functions based on the users input
+        /// </summary>
+        /// <returns></returns>
         public async Task GetExchangeAsync()
         {
             string re = apiObj.TestConnection();
@@ -61,7 +71,7 @@ namespace CurrencyConverter.Ui
                     break;
 
                 default:
-                    Console.WriteLine("Wrong selection");
+                    Console.WriteLine("Wrong choice:" + startCommand[0]);
                     break;
             }
             
